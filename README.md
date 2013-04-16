@@ -10,7 +10,7 @@ To use this library, you first need to double check the URLs in bpl/spiders/spor
 
 Once you are happy with the URLs in sporting\_pulse\_spider.py, you can then run the scrape process using:
 
-scrapy crawl sporting\_pulse -o tables.json -t json
+    scrapy crawl sporting\_pulse -o tables.json -t json
 
 This will output each line of all configured tables as a JSON object. That obect will contain the competitin the entry refers to allowing to to re-assemble the tables.
 
