@@ -6,15 +6,16 @@ from bpl.items import BplItem
 class SPSpider(BaseSpider):
         name = "sporting_pulse"
         allowed_domains = ["sportingpulse.com"]
+        match_round = 1
         start_urls = [
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-244757-0",  # Seniors
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-244758-0",  # Reserves
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-244744-0",  # U18s
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-245247-0&pool=1&round=4",  # U16s
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-245245-0&pool=1&round=4",  # U15s
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-245250-0&pool=1&round=4",  # U14s
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-245249-0&pool=1&round=4",  # U13s
-            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-245251-0&pool=1&round=4",  # U12s
+            "http://www.foxsportspulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-279778-0&pool=1&round={}".format(match_round),  # Seniors
+            "http://www.foxsportspulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-279776-0&pool=1&round={}".format(match_round),  # Reserves
+            "http://www.foxsportspulse.com/rpt_ladder.cgi?results=N&r&client=1-9386-0-279775-0&pool=1&round={}".format(match_round),  # U18s
+            "http://www.foxsportspulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-282296-0&pool=1&round={}".format(match_round),  # U16s
+            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-282580-0&pool=1&round={}".format(match_round),  # U15s
+            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-282583-0&pool=1&round={}".format(match_round),  # U14s
+            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-282582-0&pool=1&round={}".format(match_round),  # U13s
+            "http://www.sportingpulse.com/rpt_ladder.cgi?results=N&client=1-9386-0-282503-0&pool=1&round={}".format(match_round),  # U12s
         ]
 
         def parse(self, response):
